@@ -20,6 +20,8 @@ public class StatController : MonoBehaviour {
     public Slider staminaRefillSlider;
     public Slider healthSlider;
 
+    public Text healthText;
+
     private bool canRegen;
     private bool canRegenCooldown;
     private bool canEffectRegen;
@@ -67,6 +69,8 @@ public class StatController : MonoBehaviour {
 
         healthSlider.maxValue = playerMaxHealth;
         healthSlider.value = playerHealth;
+
+        healthText.text = playerHealth + "/" + playerMaxHealth;
 
         if (playerHealth > playerMaxHealth) //makes it so that you cannot heal above your maximum health value.
         {
