@@ -1,0 +1,75 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class enemyProjectile : MonoBehaviour {
+
+
+    public float speed;
+    private float damage;
+
+    public float turnSpeed;
+
+    public float bulletLife;
+
+
+    Vector3 moveDirection;
+
+    private Transform playerPos;
+
+
+    // Use this for initialization
+    void Start () {
+
+        StartCoroutine(destroyAfterTime());
+
+        playerPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+
+        moveDirection = (playerPos.position - transform.position);
+        moveDirection.z = 0;
+        moveDirection.Normalize();
+    }
+	
+	// Update is called once per frame
+	void Update () {
+
+
+        transform.position = transform.position + moveDirection * speed * Time.deltaTime;
+    }
+
+    IEnumerator destroyAfterTime()
+    {
+        yield return new WaitForSeconds(bulletLife);
+        Destroy(gameObject);
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+
+        if (other.tag == "wall")
+        {
+
+            VisualEffects.spawnHitEffect(transform);
+            Destroy(gameObject);
+
+        } else if (other.tag == "Player"){
+
+            if (PlayerController.invincible == false)
+            {
+
+            damage = damage + Random.Range(-3, 3);
+            DamageTextController.CreateDamageText(damage.ToString(), transform, "Red");
+            StatController.playerHealth = StatController.playerHealth - damage;
+            VisualEffects.spawnHitEffect(transform);
+            Destroy(gameObject);
+            }
+
+
+        }
+    }
+
+    public void setDamage(float damageAmount)
+    {
+        damage = damageAmount;
+    }
+}
