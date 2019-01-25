@@ -10734,11 +10734,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c2cab14473f6e6a42985f700997772c7, type: 2}
   - {fileID: 11400000, guid: 799761202757a3440b3fa1d6e0ebb53a, type: 2}
   - {fileID: 11400000, guid: 5936125e20365914eb005dd8fc29f5d2, type: 2}
+  - {fileID: 11400000, guid: b27f94ea2abda7448989a1c111bd0a64, type: 2}
   chance:
   - 50
   - 15
   - 15
   - 15
+  - 5
   dropRadius: 0.3
 --- !u!114 &752358624
 MonoBehaviour:
@@ -10828,7 +10830,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.03, y: -0.1}
+  m_Offset: {x: -0.03, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -16145,7 +16147,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1615112083}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.5, y: -1.36, z: 0}
+  m_LocalPosition: {x: -23.39, y: -1.36, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children:
   - {fileID: 436011501}
@@ -16869,6 +16871,58 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1725714982}
+--- !u!1001 &1758972454
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4928524622774670, guid: 159b06e1b564bbc42ae883bbad28b290, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928524622774670, guid: 159b06e1b564bbc42ae883bbad28b290, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 15.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928524622774670, guid: 159b06e1b564bbc42ae883bbad28b290, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928524622774670, guid: 159b06e1b564bbc42ae883bbad28b290, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928524622774670, guid: 159b06e1b564bbc42ae883bbad28b290, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928524622774670, guid: 159b06e1b564bbc42ae883bbad28b290, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928524622774670, guid: 159b06e1b564bbc42ae883bbad28b290, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928524622774670, guid: 159b06e1b564bbc42ae883bbad28b290, type: 2}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 114407155794534552, guid: 159b06e1b564bbc42ae883bbad28b290,
+        type: 2}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: b27f94ea2abda7448989a1c111bd0a64,
+        type: 2}
+    - target: {fileID: 1780239676606110, guid: 159b06e1b564bbc42ae883bbad28b290, type: 2}
+      propertyPath: m_Name
+      value: DroppedItem (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 159b06e1b564bbc42ae883bbad28b290, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1798176956
 GameObject:
   m_ObjectHideFlags: 0
@@ -16908,11 +16962,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c2cab14473f6e6a42985f700997772c7, type: 2}
   - {fileID: 11400000, guid: 799761202757a3440b3fa1d6e0ebb53a, type: 2}
   - {fileID: 11400000, guid: 5936125e20365914eb005dd8fc29f5d2, type: 2}
+  - {fileID: 11400000, guid: b27f94ea2abda7448989a1c111bd0a64, type: 2}
   chance:
   - 50
   - 15
   - 15
   - 15
+  - 5
   dropRadius: 0.3
 --- !u!114 &1798176958
 MonoBehaviour:
@@ -17002,7 +17058,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.03, y: -0.1}
+  m_Offset: {x: -0.03, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -17131,11 +17187,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c2cab14473f6e6a42985f700997772c7, type: 2}
   - {fileID: 11400000, guid: 799761202757a3440b3fa1d6e0ebb53a, type: 2}
   - {fileID: 11400000, guid: 5936125e20365914eb005dd8fc29f5d2, type: 2}
+  - {fileID: 11400000, guid: b27f94ea2abda7448989a1c111bd0a64, type: 2}
   chance:
   - 50
   - 15
   - 15
   - 15
+  - 5
   dropRadius: 0.3
 --- !u!114 &1814845588
 MonoBehaviour:
@@ -17225,7 +17283,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.03, y: -0.1}
+  m_Offset: {x: -0.03, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -18967,7 +19025,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.03, y: -0.1}
+  m_Offset: {x: -0.03, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -19034,11 +19092,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c2cab14473f6e6a42985f700997772c7, type: 2}
   - {fileID: 11400000, guid: 799761202757a3440b3fa1d6e0ebb53a, type: 2}
   - {fileID: 11400000, guid: 5936125e20365914eb005dd8fc29f5d2, type: 2}
+  - {fileID: 11400000, guid: b27f94ea2abda7448989a1c111bd0a64, type: 2}
   chance:
   - 50
   - 15
   - 15
   - 15
+  - 5
   dropRadius: 0.3
 --- !u!1 &2099656826
 GameObject:

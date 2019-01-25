@@ -39,6 +39,9 @@ public class DamageText : MonoBehaviour {
         {
             damageText.color = Color.green;
 
+        } else if (color == "Blue")
+        {
+            damageText.color = Color.blue;
         } else
         {
             Debug.Log(color + " is not a valid color!");
