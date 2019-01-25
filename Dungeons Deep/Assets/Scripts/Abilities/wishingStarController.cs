@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class wishingStarController : MonoBehaviour {
 
     private float uses;
-    private float maxUses = 3;
+    private float maxUses = 20;
     private float healingPower = 50;
     public static bool isHealing = false;
 
