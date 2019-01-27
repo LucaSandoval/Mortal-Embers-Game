@@ -176,7 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   turnSpeed: 0
-  bulletLife: 5
+  bulletLife: 10
 --- !u!212 &212413766976130132
 SpriteRenderer:
   m_ObjectHideFlags: 1

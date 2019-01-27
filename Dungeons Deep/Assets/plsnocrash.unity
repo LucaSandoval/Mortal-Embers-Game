@@ -1270,8 +1270,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 68.899994}
-  m_SizeDelta: {x: 400, y: 100}
+  m_AnchoredPosition: {x: 0, y: 224}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &185361128
 MonoBehaviour:
@@ -1286,15 +1286,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.884}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.197}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 440ae7c222f2f3a4bb8b0b5ccda2b7ca, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 6543b07c0aa98f24d812b286fc797779, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -13553,7 +13553,6 @@ GameObject:
   - component: {fileID: 1209713363}
   - component: {fileID: 1209713362}
   - component: {fileID: 1209713361}
-  - component: {fileID: 1209713364}
   - component: {fileID: 1209713365}
   m_Layer: 0
   m_Name: Walls
@@ -14500,17 +14499,6 @@ Tilemap:
   m_TileRefreshArray:
   - serializedVersion: 1
     m_DirtyIndex: 0
---- !u!114 &1209713364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1209713359}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89c1e82803d6d3440b477ebf9c401bba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &1209713365
 Rigidbody2D:
   serializedVersion: 4
@@ -16292,7 +16280,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.61, y: 0.86}
+  m_Size: {x: 0.61, y: 0.95}
   m_Direction: 0
 --- !u!1 &1640849625
 GameObject:
@@ -18528,7 +18516,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 158.1, y: 15}
+  m_AnchoredPosition: {x: -6.5, y: -1.5999985}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2013503813
@@ -18544,7 +18532,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.453}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -18564,7 +18552,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press 'E' to pick up.
+  m_Text: "                   'E'\n\t\t\t\t Pick Up"
 --- !u!222 &2013503814
 CanvasRenderer:
   m_ObjectHideFlags: 0
