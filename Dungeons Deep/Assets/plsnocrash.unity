@@ -10628,7 +10628,6 @@ GameObject:
   - component: {fileID: 739681051}
   - component: {fileID: 739681050}
   - component: {fileID: 739681055}
-  - component: {fileID: 739681054}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -10699,18 +10698,6 @@ Transform:
   m_Father: {fileID: 1392445774}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &739681054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 739681049}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: 83163722dfbdfc946ac9bb68a51133e1, type: 2}
 --- !u!114 &739681055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17998,6 +17985,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1903087163}
   - component: {fileID: 1903087165}
+  - component: {fileID: 1903087164}
   m_Layer: 5
   m_Name: Inventory
   m_TagString: Untagged
@@ -18027,6 +18015,23 @@ RectTransform:
   m_AnchoredPosition: {x: -431, y: -0.0000076294}
   m_SizeDelta: {x: 648.5, y: 413.7}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1903087164
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1903087162}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1b6a4ea6692331f4f8f5633d86736866, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!222 &1903087165
 CanvasRenderer:
   m_ObjectHideFlags: 0
