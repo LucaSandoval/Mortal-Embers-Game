@@ -1,0 +1,31 @@
+To Do List before considering it in alpha:
+
+- NPC's + Diolauge
+- Stats + Leveling
+- World Design
+- New Bullet Patterns
+- A few music tracks?
+- More frames of anim.
+- Tabs in Inventory
+- Mortal Embers System(see below)
+- Right Click Melee Abilities 
+- More Enemies + Items (duh)
+- Passive Healing & Status Effects(?)
+- Fix depth of feild issues
+- Title Screen + basic menus
+- basic cutscenes 
+- Knockback on enemies (white flash too)
+
+
+Big Ideas:
+
+Mortal Embers System:
+  - Burning mortal embers alows you to move between a few different versions of the world with different missions
+  and enemies in each.
+  - Different graphics/versions of each area (like maybe past-present-future)
+  
+Range Effects Damage:
+  - The closer you are the more damage your bullets do?
+  
+Armor that Falls off:
+  - Enemies have armor peices that like take on hit and fall off before they can be damaged.
