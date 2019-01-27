@@ -21,6 +21,7 @@ public class StatController : MonoBehaviour {
     public Slider healthSlider;
 
     public Text healthText;
+    public Text staminaText;
 
     private bool canRegen;
     private bool canRegenCooldown;
@@ -71,6 +72,7 @@ public class StatController : MonoBehaviour {
         healthSlider.value = playerHealth;
 
         healthText.text = playerHealth + "/" + playerMaxHealth;
+        staminaText.text = Mathf.Round(Stamina) + "/" + MaxStamina;
 
         if (playerHealth > playerMaxHealth) //makes it so that you cannot heal above your maximum health value.
         {
