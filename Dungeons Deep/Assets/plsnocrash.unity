@@ -756,6 +756,7 @@ GameObject:
   - component: {fileID: 97707949}
   - component: {fileID: 97707951}
   - component: {fileID: 97707950}
+  - component: {fileID: 97707952}
   m_Layer: 5
   m_Name: Abilities
   m_TagString: Untagged
@@ -816,6 +817,23 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 97707948}
+--- !u!95 &97707952
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 97707948}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 02159123d8448b24db81b3cf58a10ef4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &124839884
 GameObject:
   m_ObjectHideFlags: 0
@@ -14743,6 +14761,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1314400429}
+  - component: {fileID: 1314400430}
   m_Layer: 5
   m_Name: EquipedItems
   m_TagString: Untagged
@@ -14770,6 +14789,23 @@ RectTransform:
   m_AnchoredPosition: {x: 480, y: 282.5}
   m_SizeDelta: {x: 100, y: 101}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1314400430
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1314400428}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1484fba4c0187b04496c7041fd0c3408, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &1337622069
 Prefab:
   m_ObjectHideFlags: 0
@@ -16526,6 +16562,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1674721080}
+  - component: {fileID: 1674721081}
   m_Layer: 5
   m_Name: Bars
   m_TagString: Untagged
@@ -16554,6 +16591,23 @@ RectTransform:
   m_AnchoredPosition: {x: 480, y: -282}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1674721081
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1674721079}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 74c9f740c2712d64793841e445177b3d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1688587215
 GameObject:
   m_ObjectHideFlags: 0
