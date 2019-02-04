@@ -7,6 +7,8 @@ public class NPCController : MonoBehaviour {
     public Diolauge dioluage;
     private bool speaking = false;
     private bool playerIsInRange = false;
+    private bool canScroll = false; //determines wether the player can skip to the next sentence or not.
+    public bool canSpeak = true;
 
 
 
@@ -14,11 +16,26 @@ public class NPCController : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.E) && playerIsInRange == true && speaking == false)
         {
-            speaking = true;
             PlayerController.isActive = false;
             InitializeController.diolaugeBox.SetActive(true);
             FindObjectOfType<DiolaugeManager>().StartDialogue(dioluage);
             InitializeController.promptBox.SetActive(false);
+            speaking = true;
+            canSpeak = false;
+            StartCoroutine(startSpeaking());
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.E) &&  speaking == true && canScroll == true) //allows player to move to next sentence.
+        {
+            if (FindObjectOfType<DiolaugeManager>().sentences.Count == 0)
+            {
+                PlayerController.isActive = true;
+
+            }
+
+            FindObjectOfType<DiolaugeManager>().DisplayNextSentence();
+
         }
     }
 
@@ -43,7 +60,16 @@ public class NPCController : MonoBehaviour {
 
             InitializeController.promptBox.SetActive(false);
 
+            speaking = false;
+            canScroll = false;
+
         }
+    }
+
+    IEnumerator startSpeaking()
+    {
+        yield return new WaitForSeconds(0.2f);
+        canScroll = true;
     }
 
 }

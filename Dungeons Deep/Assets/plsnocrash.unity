@@ -18589,14 +18589,14 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'v0.01 - 1/21/19
+  m_Text: 'v0.02 - 2/3/19
 
 
     WASD - Move
 
     Left Mouse - Fire
 
-    E - Pickup
+    E - Pickup/Interact
 
     R - Use Wishing Star
 

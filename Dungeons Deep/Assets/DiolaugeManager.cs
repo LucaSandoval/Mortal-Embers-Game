@@ -11,7 +11,7 @@ public class DiolaugeManager : MonoBehaviour {
 
     public Animator animator;
 
-    private Queue<string> sentences;
+    public Queue<string> sentences;
 
 
     // Use this for initialization
@@ -23,7 +23,6 @@ public class DiolaugeManager : MonoBehaviour {
 
     public void StartDialogue(Diolauge dialogue)
     {
-        animator.SetBool("IsOpen", true);
 
         nameText.text = dialogue.name;
 
@@ -67,7 +66,7 @@ public class DiolaugeManager : MonoBehaviour {
 
     void EndDialogue()
     {
-        animator.SetBool("IsOpen", false);
+        InitializeController.diolaugeBox.SetActive(false);
 
     }
 }
