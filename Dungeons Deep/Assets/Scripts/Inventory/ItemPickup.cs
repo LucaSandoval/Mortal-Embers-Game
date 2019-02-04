@@ -41,6 +41,8 @@ public class ItemPickup : Interactable {
         if (other.tag == "Player")
         {
             playerIsInRange = true;
+            InitializeController.promptText.text = "Pick Up";
+
             InitializeController.promptBox.SetActive(true);
         }
 
@@ -51,6 +53,8 @@ public class ItemPickup : Interactable {
         if (other.tag == "Player")
         {
             playerIsInRange = false;
+            InitializeController.promptText.text = "Pick Up";
+
             InitializeController.promptBox.SetActive(false);
 
         }

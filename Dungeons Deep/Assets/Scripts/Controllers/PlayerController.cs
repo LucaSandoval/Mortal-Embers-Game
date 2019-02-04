@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour {
     public static bool invincible;
     public static Transform globalPLayerPosition;
 
+    public static bool isActive = true;
+
 	// Use this for initialization
 	void Start () {
 
@@ -73,9 +75,13 @@ public class PlayerController : MonoBehaviour {
 
     void handleMove()
     {
-        if(dashing == false)
+        if (isActive == true)
         {
-        rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
+            if(dashing == false)
+            {
+                rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
+
+            }
 
         }
         

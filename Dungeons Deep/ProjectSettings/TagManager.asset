@@ -9,6 +9,8 @@ TagManager:
   - Bullet
   - promptBox
   - wishingStarBase
+  - promptText
+  - diolaugeBox
   layers:
   - Default
   - TransparentFX
