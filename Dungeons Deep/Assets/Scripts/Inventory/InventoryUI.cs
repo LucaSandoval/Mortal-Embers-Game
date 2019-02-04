@@ -26,15 +26,20 @@ public class InventoryUI : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
-        if (Input.GetKeyDown(KeyCode.Q) && DisplayUI.isDisplayWindowOpen == true) //alows the player to open their inventory using the Q key.
+        if (DiolaugeManager.inDiolauge == false)
         {
-            DisplayUI.isDisplayWindowOpen = false;
-            inventoryUI.SetActive(!inventoryUI.activeSelf);
-            inventoryOpen = !inventoryOpen;
-        } else if (Input.GetKeyDown(KeyCode.Q))
-        {
-            inventoryUI.SetActive(!inventoryUI.activeSelf);
-            inventoryOpen = !inventoryOpen;
+
+            if (Input.GetKeyDown(KeyCode.Q) && DisplayUI.isDisplayWindowOpen == true) //alows the player to open their inventory using the Q key.
+            {
+                DisplayUI.isDisplayWindowOpen = false;
+                inventoryUI.SetActive(!inventoryUI.activeSelf);
+                inventoryOpen = !inventoryOpen;
+            } else if (Input.GetKeyDown(KeyCode.Q))
+            {
+                inventoryUI.SetActive(!inventoryUI.activeSelf);
+                inventoryOpen = !inventoryOpen;
+
+            }
 
         }
 

@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour {
     private Rigidbody2D rb;
     private Vector2 moveVelocity;
 
-    private bool dashing;
+    public static bool dashing;
     public static bool invincible;
     public static Transform globalPLayerPosition;
 

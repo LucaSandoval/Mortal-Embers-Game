@@ -13,6 +13,8 @@ public class DiolaugeManager : MonoBehaviour {
 
     public Queue<string> sentences;
 
+    public static bool inDiolauge = false;
+
 
     // Use this for initialization
     void Start()
@@ -27,6 +29,8 @@ public class DiolaugeManager : MonoBehaviour {
         nameText.text = dialogue.name;
 
         sentences.Clear();
+
+        inDiolauge = true;
 
         foreach (string sentence in dialogue.sentences)
         {
@@ -67,6 +71,6 @@ public class DiolaugeManager : MonoBehaviour {
     void EndDialogue()
     {
         InitializeController.diolaugeBox.SetActive(false);
-
+        inDiolauge = false;
     }
 }

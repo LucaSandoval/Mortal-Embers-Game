@@ -8,33 +8,35 @@ public class NPCController : MonoBehaviour {
     private bool speaking = false;
     private bool playerIsInRange = false;
     private bool canScroll = false; //determines wether the player can skip to the next sentence or not.
-    public bool canSpeak = true;
 
 
 
     void Update() //checking for player interaction.
     {
-        if (Input.GetKeyDown(KeyCode.E) && playerIsInRange == true && speaking == false)
+        if (PlayerController.dashing == false)
         {
-            PlayerController.isActive = false;
-            InitializeController.diolaugeBox.SetActive(true);
-            FindObjectOfType<DiolaugeManager>().StartDialogue(dioluage);
-            InitializeController.promptBox.SetActive(false);
-            speaking = true;
-            canSpeak = false;
-            StartCoroutine(startSpeaking());
-
-        }
-
-        if (Input.GetKeyDown(KeyCode.E) &&  speaking == true && canScroll == true) //allows player to move to next sentence.
-        {
-            if (FindObjectOfType<DiolaugeManager>().sentences.Count == 0)
+            if (Input.GetKeyDown(KeyCode.E) && playerIsInRange == true && speaking == false)
             {
-                PlayerController.isActive = true;
+                PlayerController.isActive = false;
+                InitializeController.diolaugeBox.SetActive(true);
+                FindObjectOfType<DiolaugeManager>().StartDialogue(dioluage);
+                InitializeController.promptBox.SetActive(false);
+                speaking = true;
+                StartCoroutine(startSpeaking());
 
             }
 
+            if (Input.GetKeyDown(KeyCode.E) &&  speaking == true && canScroll == true) //allows player to move to next sentence.
+            {
+                if (FindObjectOfType<DiolaugeManager>().sentences.Count == 0)
+                {
+                    PlayerController.isActive = true;
+
+                }
+
             FindObjectOfType<DiolaugeManager>().DisplayNextSentence();
+
+        }
 
         }
     }
