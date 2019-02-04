@@ -34,7 +34,7 @@ public class StatController : MonoBehaviour {
 
         damage = 15;
 
-        playerMaxHealth = 100;
+        playerMaxHealth = 950;
         
         Stamina = MaxStamina;
         playerHealth = playerMaxHealth;
