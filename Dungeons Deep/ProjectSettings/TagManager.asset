@@ -12,6 +12,7 @@ TagManager:
   - promptText
   - diolaugeBox
   - areaText
+  - emberText
   layers:
   - Default
   - TransparentFX
