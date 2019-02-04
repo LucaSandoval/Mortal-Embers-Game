@@ -9,6 +9,8 @@ public class LootController : MonoBehaviour {
     public Item[] drops;
     public float[] chance;
 
+    public float stardustDrop;
+
     private float dice;
 
     private ItemPickup lootBag;
@@ -19,6 +21,8 @@ public class LootController : MonoBehaviour {
 
     public void dropLoot()
     {
+        stardustController.addedAmount = stardustController.addedAmount + stardustDrop + Random.Range(-3, 3);
+
         for (int i = 0; i < drops.Length; i++)
         {
             thisPos = new Vector3(transform.position.x + Random.Range(-dropRadius,dropRadius), transform.position.y + Random.Range(-dropRadius, dropRadius), transform.position.z);
