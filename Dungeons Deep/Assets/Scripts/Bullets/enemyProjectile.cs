@@ -35,6 +35,9 @@ public class enemyProjectile : MonoBehaviour {
 
 
         transform.position = transform.position + moveDirection * speed * Time.deltaTime;
+
+        Quaternion rotation = Quaternion.LookRotation(playerPos.transform.position - transform.position, transform.TransformDirection(Vector3.down));
+        transform.rotation = new Quaternion(0, 0, rotation.z, rotation.w);
     }
 
     IEnumerator destroyAfterTime()
