@@ -578,7 +578,7 @@ RectTransform:
   - {fileID: 1881300216}
   - {fileID: 1821046188}
   m_Father: {fileID: 1674721080}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2237,7 +2237,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 28.5, y: -19.9}
+  m_AnchoredPosition: {x: 28.5, y: 13}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &363726148
@@ -12079,6 +12079,7 @@ RectTransform:
   - {fileID: 2099656827}
   - {fileID: 1238978609}
   - {fileID: 725737814}
+  - {fileID: 2044648359}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17584,7 +17585,6 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2044648359}
   - {fileID: 2016625495}
   - {fileID: 75198447}
   - {fileID: 1853374784}
@@ -18902,7 +18902,7 @@ RectTransform:
   m_Children:
   - {fileID: 2020009333}
   m_Father: {fileID: 1674721080}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -19818,7 +19818,7 @@ RectTransform:
   - {fileID: 27996151}
   - {fileID: 1371949021}
   m_Father: {fileID: 1674721080}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -20065,7 +20065,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000038147, y: 9.5}
+  m_AnchoredPosition: {x: -0.0000038147, y: 17.2}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2040291112
@@ -20089,11 +20089,11 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: bed10064456b252499c0ec735ab3ac30, type: 3}
-    m_FontSize: 64
+    m_FontSize: 71
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 73
+    m_MaxSize: 77
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -20138,13 +20138,13 @@ RectTransform:
   - {fileID: 778029721}
   - {fileID: 363726147}
   - {fileID: 138320565}
-  m_Father: {fileID: 1674721080}
-  m_RootOrder: 0
+  m_Father: {fileID: 899243621}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -368.33, y: 144.23}
-  m_SizeDelta: {x: 133.77, y: 16.86}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -5, y: 21}
+  m_SizeDelta: {x: 133.77002, y: 16.859985}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2044648360
 MonoBehaviour:
