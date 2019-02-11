@@ -18,6 +18,10 @@ public class PlayerController : MonoBehaviour {
 
     public static bool isActive = true;
 
+    private float facing = 0;
+
+    // 0 - Down, 1 - Up, 2 - Left, 3 - Right
+
 	// Use this for initialization
 	void Start () {
 
@@ -90,10 +94,14 @@ public class PlayerController : MonoBehaviour {
 
     void HandleAnims() // handles animation for movment.
     {
+
         if (Input.GetKey(KeyCode.A))
         {
-            
+            facing = 2;
 
+            anim.SetBool("upIdle", false);
+            anim.SetBool("leftIdle", false);
+            anim.SetBool("rightIdle", false);
             anim.SetBool("left", true);
             anim.SetBool("idle", false);
             anim.SetBool("up", false);
@@ -104,7 +112,11 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.D))
         {
-            
+            facing = 3;
+
+            anim.SetBool("upIdle", false);
+            anim.SetBool("leftIdle", false);
+            anim.SetBool("rightIdle", false);
             anim.SetBool("right", true);
             anim.SetBool("idle", false);
             anim.SetBool("up", false);
@@ -115,7 +127,11 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.W))
         {
-           
+            facing = 1;
+
+            anim.SetBool("upIdle", false);
+            anim.SetBool("leftIdle", false);
+            anim.SetBool("rightIdle", false);
             anim.SetBool("up", true);
             anim.SetBool("idle", false);
 
@@ -126,7 +142,11 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.S))
         {
-            
+            facing = 0;
+
+            anim.SetBool("upIdle", false);
+            anim.SetBool("leftIdle", false);
+            anim.SetBool("rightIdle", false);
             anim.SetBool("forward", true);
             anim.SetBool("idle", false);
             anim.SetBool("up", false);
@@ -137,11 +157,34 @@ public class PlayerController : MonoBehaviour {
 
         if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.S))
         {
-            anim.SetBool("idle", true);
             anim.SetBool("up", false);
             anim.SetBool("forward", false);
             anim.SetBool("left", false);
             anim.SetBool("right", false);
+            anim.SetBool("idle", false);
+            anim.SetBool("upIdle", false);
+            anim.SetBool("leftIdle", false);
+            anim.SetBool("rightIdle", false);
+
+            if (facing == 0)
+            {
+                anim.SetBool("idle", true);
+
+            } else if (facing == 1)
+            {
+                anim.SetBool("upIdle", true);
+
+            } else if (facing == 2)
+            {
+                anim.SetBool("leftIdle", true);
+
+            }
+            else if (facing == 3)
+            {
+                anim.SetBool("rightIdle", true);
+
+            }
+
         }
     }
 
