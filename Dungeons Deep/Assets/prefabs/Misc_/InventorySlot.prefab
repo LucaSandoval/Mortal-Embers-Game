@@ -103,6 +103,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 114091678870179144}
   displayWindowScipt: {fileID: 0}
+  item: {fileID: 0}
+  weapon: {fileID: 0}
 --- !u!114 &114631118982517568
 MonoBehaviour:
   m_ObjectHideFlags: 1
