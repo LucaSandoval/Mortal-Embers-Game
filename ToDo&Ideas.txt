@@ -1,11 +1,11 @@
 To Do List before considering it in alpha:
 
-- NPC's + Diolauge
-- Stats + Leveling
+- NPC's + Diolauge ✔
+- Stats + Leveling 
 - World Design
 - New Bullet Patterns
 - A few music tracks?
-- More frames of anim.
+- More frames of anim. ✔ (Mostly)
 - Tabs in Inventory
 - Mortal Embers System(see below)
 - Right Click Melee Abilities 
