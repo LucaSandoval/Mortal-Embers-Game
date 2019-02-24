@@ -53,7 +53,6 @@ public class EnemyBulletController : MonoBehaviour {
                 CanShoot = false;
                 bullets = bullets - 1;
                 fireBullet(bulletDamage);
-                StartCoroutine(cam.Shake(.1f, 0.075f));
                 StartCoroutine(reload());
             }
 
