@@ -26,7 +26,7 @@ public class EnemyBulletController : MonoBehaviour {
 
         CanShoot = true;
 
-        bullets = maxBullets;
+        bullets = 0;
 
         Restoring = false;
 
