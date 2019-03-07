@@ -39,6 +39,10 @@ public class MonsterStats : MonoBehaviour {
             //ren.color = new Color(5,5,5);
             //Debug.Log(ren.color);
             Health = Health - WeaponManager.instance.currentWeapon.physicalDamage;
+        } else if (other.tag == "Ability")
+        {
+            Health = Health - WeaponManager.instance.currentWeapon.abilityPower;
+
         }
     }
 

@@ -5,7 +5,10 @@ using UnityEngine.UI;
 public class Weapon : Item {
 
     public GameObject bulletPrefab;
+    public GameObject abilityPrefab;
     public Sprite abilityIcon;
+    public float abilityCoolDown;
+    public float abilityPower;
 
     public float physicalDamage;
     public float lifeDamage;
