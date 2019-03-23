@@ -22,6 +22,9 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1478334372314764, guid: a9216a5b6a4c10f49a8a2068d6b64cd1,
     type: 2}
   abilityIcon: {fileID: 21300000, guid: 09baf1af4c24186428fede74305431d0, type: 3}
+  abilityPrefab: {fileID: 1421259380448558, guid: d714292b24f6c094e8a880fe569960c5,
+    type: 2}
+  abilityCoolDown: 1
   physicalDamage: 15
   lifeDamage: 0
   chaosDamage: 0
