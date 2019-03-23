@@ -21,10 +21,7 @@ MonoBehaviour:
   useText: 2
   bulletPrefab: {fileID: 1478334372314764, guid: a9216a5b6a4c10f49a8a2068d6b64cd1,
     type: 2}
-  abilityPrefab: {fileID: 1608199336315802, guid: da06d67a5c92c43468098a289e502e17,
-    type: 2}
   abilityIcon: {fileID: 21300000, guid: 09baf1af4c24186428fede74305431d0, type: 3}
-  abilityCoolDown: 0.5
   physicalDamage: 15
   lifeDamage: 0
   chaosDamage: 0
