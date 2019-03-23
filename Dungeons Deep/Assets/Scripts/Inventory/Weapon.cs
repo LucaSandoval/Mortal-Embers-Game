@@ -6,7 +6,9 @@ public class Weapon : Item {
 
     public GameObject bulletPrefab;
     public Sprite abilityIcon;
+    public GameObject abilityPrefab;
 
+    public float abilityCoolDown;
     public float physicalDamage;
     public float lifeDamage;
     public float chaosDamage;
