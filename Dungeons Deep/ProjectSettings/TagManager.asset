@@ -13,6 +13,7 @@ TagManager:
   - diolaugeBox
   - areaText
   - emberText
+  - Ability
   layers:
   - Default
   - TransparentFX

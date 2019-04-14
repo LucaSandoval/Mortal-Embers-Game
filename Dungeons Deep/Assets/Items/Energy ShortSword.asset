@@ -25,6 +25,7 @@ MonoBehaviour:
   abilityPrefab: {fileID: 1421259380448558, guid: d714292b24f6c094e8a880fe569960c5,
     type: 2}
   abilityCoolDown: 1
+  abilityDamage: 30
   physicalDamage: 15
   lifeDamage: 0
   chaosDamage: 0

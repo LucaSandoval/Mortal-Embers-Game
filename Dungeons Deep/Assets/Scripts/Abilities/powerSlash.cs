@@ -7,15 +7,12 @@ public class powerSlash : MonoBehaviour
 
     public float abilityLife;
 
-    private float damage;
-
     private Transform playerPosition;
 
 
 
     void Start()
     {
-        damage = WeaponManager.instance.currentWeapon.physicalDamage * 3f;
         StartCoroutine(destroyAfterTime());
         playerPosition = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
@@ -40,9 +37,6 @@ public class powerSlash : MonoBehaviour
 
         if (other.tag == "enemy")
         {
-            damage = damage + Random.Range(-3, 3);
-            DamageTextController.CreateDamageText(damage.ToString(), transform, "Gray");
-
 
             VisualEffects.spawnHitEffect(transform);
         }

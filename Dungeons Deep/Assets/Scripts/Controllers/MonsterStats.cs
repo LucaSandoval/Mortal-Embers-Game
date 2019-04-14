@@ -14,6 +14,9 @@ public class MonsterStats : MonoBehaviour {
 
     private SpriteRenderer ren;
 
+    private float damage;
+
+
 
     public void Start()
     {
@@ -34,11 +37,25 @@ public class MonsterStats : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Bullet")
+
+        if (other.tag == "Bullet")
         {
-            //ren.color = new Color(5,5,5);
-            //Debug.Log(ren.color);
-            Health = Health - WeaponManager.instance.currentWeapon.physicalDamage;
+
+            damage = WeaponManager.instance.currentWeapon.physicalDamage + Random.Range(-3, 3);
+
+            DamageTextController.CreateDamageText(damage.ToString(), transform, "Gray");
+
+            Health = Health - damage;
+
+
+        } else if (other.tag == "Ability")
+        {
+            damage = WeaponManager.instance.currentWeapon.abilityDamage + Random.Range(-3, 3);
+
+            DamageTextController.CreateDamageText(damage.ToString(), transform, "Gray");
+
+            Health = Health - damage;
+
         }
     }
 

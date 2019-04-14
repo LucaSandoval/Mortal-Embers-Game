@@ -9,15 +9,12 @@ public class Projectile : MonoBehaviour {
 
     public float turnSpeed;
 
-    private float damage;
-
     Vector3 moveDirection;
 
     
 
     void Start()
     {
-        damage = WeaponManager.instance.currentWeapon.physicalDamage;
         StartCoroutine(destroyAfterTime());
 
 
@@ -52,9 +49,6 @@ public class Projectile : MonoBehaviour {
          
         } else if (other.tag == "enemy")
         {
-            damage = damage + Random.Range(-3, 3);
-            DamageTextController.CreateDamageText(damage.ToString(), transform, "Gray");
-
 
             VisualEffects.spawnHitEffect(transform);
             Destroy(gameObject);

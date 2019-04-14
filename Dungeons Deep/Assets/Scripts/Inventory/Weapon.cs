@@ -9,6 +9,7 @@ public class Weapon : Item {
     public GameObject abilityPrefab;
 
     public float abilityCoolDown;
+    public float abilityDamage;
     public float physicalDamage;
     public float lifeDamage;
     public float chaosDamage;
