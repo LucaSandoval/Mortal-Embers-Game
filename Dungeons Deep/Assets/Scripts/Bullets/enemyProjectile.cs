@@ -25,9 +25,6 @@ public class enemyProjectile : MonoBehaviour {
 
         playerPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
-        moveDirection = (playerPos.position - transform.position);
-        moveDirection.z = 0;
-        moveDirection.Normalize();
     }
 	
 	// Update is called once per frame
@@ -74,5 +71,33 @@ public class enemyProjectile : MonoBehaviour {
     public void setDamage(float damageAmount)
     {
         damage = damageAmount;
+    }
+
+    public void setDirection(string dir)
+    {
+
+        if (dir == "chase")
+        {
+            moveDirection = (playerPos.position - transform.position);
+            moveDirection.z = 0;
+        } else if (dir == "up")
+        {
+            moveDirection = new Vector3(0, 1);
+        }
+        else if (dir == "down")
+        {
+            moveDirection = new Vector3(0, -1);
+        }
+        else if (dir == "right")
+        {
+            moveDirection = new Vector3(-1, 0);
+        }
+        else if (dir == "left")
+        {
+            moveDirection = new Vector3(1, 0);
+        }
+
+        moveDirection.Normalize();
+
     }
 }

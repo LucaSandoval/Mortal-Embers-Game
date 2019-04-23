@@ -42,7 +42,12 @@ public class DamageText : MonoBehaviour {
         } else if (color == "Blue")
         {
             damageText.color = Color.blue;
-        } else
+        } else if (color == "Yellow")
+        {
+
+            damageText.color = Color.yellow;
+        }
+        else
         {
             Debug.Log(color + " is not a valid color!");
         }

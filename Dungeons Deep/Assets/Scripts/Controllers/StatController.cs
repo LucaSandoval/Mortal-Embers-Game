@@ -29,12 +29,12 @@ public class StatController : MonoBehaviour {
 
     void Start()
     {
-        MaxStamina = 100;
+        MaxStamina = 10;
         effectStamina = 0;
 
         damage = 15;
 
-        playerMaxHealth = 950;
+        playerMaxHealth = 50;
         
         Stamina = MaxStamina;
         playerHealth = playerMaxHealth;

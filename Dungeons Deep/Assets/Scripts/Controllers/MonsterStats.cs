@@ -52,7 +52,7 @@ public class MonsterStats : MonoBehaviour {
         {
             damage = WeaponManager.instance.currentWeapon.abilityDamage + Random.Range(-3, 3);
 
-            DamageTextController.CreateDamageText(damage.ToString(), transform, "Gray");
+            DamageTextController.CreateDamageText(damage.ToString(), transform, "Yellow");
 
             Health = Health - damage;
 

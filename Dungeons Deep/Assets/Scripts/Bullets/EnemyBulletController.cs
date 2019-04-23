@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyBulletController : MonoBehaviour {
 
+    public fireType fireType;
+
     public enemyProjectile bulletPrefab;
     private CameraShake cam;
     private float bulletDamage;
@@ -36,9 +38,48 @@ public class EnemyBulletController : MonoBehaviour {
 
     public void fireBullet(float damage) //function for instantiating and then firing bullets.
     {
-        enemyProjectile instance = Instantiate(bulletPrefab);
-        instance.setDamage(damage);
-        instance.transform.position = this.transform.position;  
+
+        if (fireType.ToString() == "chase") //if the bullet that will be spawned is of the chasing type
+        {
+            enemyProjectile instance = Instantiate(bulletPrefab);
+            instance.setDamage(damage);
+            instance.setDirection("chase");
+            instance.transform.position = this.transform.position;  
+        }
+
+        if (fireType.ToString() == "fourspread") // if the bullet that will be spawned is of the directional type.
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                if (i == 1)
+                {
+                    enemyProjectile instance = Instantiate(bulletPrefab);
+                    instance.setDamage(damage);
+                    instance.setDirection("up");
+                    instance.transform.position = this.transform.position;
+                } else if (i == 2)
+                {
+                    enemyProjectile instance = Instantiate(bulletPrefab);
+                    instance.setDamage(damage);
+                    instance.setDirection("down");
+                    instance.transform.position = this.transform.position;
+                }
+                else if (i == 3)
+                {
+                    enemyProjectile instance = Instantiate(bulletPrefab);
+                    instance.setDamage(damage);
+                    instance.setDirection("left");
+                    instance.transform.position = this.transform.position;
+                }
+                else if (i == 4)
+                {
+                    enemyProjectile instance = Instantiate(bulletPrefab);
+                    instance.setDamage(damage);
+                    instance.setDirection("right");
+                    instance.transform.position = this.transform.position;
+                }
+            }
+        }
     }
 
     private void Update()
@@ -87,3 +128,5 @@ public class EnemyBulletController : MonoBehaviour {
         bulletDamage = Attack;
     }
 }
+
+public enum fireType { chase, fourspread, sixspread}
