@@ -33,7 +33,7 @@ public class BulletController : MonoBehaviour {
             {
                 if(manager.currentWeapon != null){
 
-                    if (CanShoot == true && StatController.Stamina > 1)
+                    if (CanShoot == true && StatController.Stamina > 0)
                     {
                         StatController.Stamina = StatController.Stamina - manager.currentWeapon.staminaCost;
                         StartCoroutine(cam.Shake(.1f, manager.currentWeapon.recoil));

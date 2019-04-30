@@ -10,6 +10,10 @@ public class StatController : MonoBehaviour {
     private float regenSpace = 0.1f; //esentially a little bit of buffer time for when the stamina bar hits zero so the calculations can be done.
     private float effectStamina; //a float used to visually show that your stamina is regenerating once you have run out. 
 
+    private float tempStamina; //used to check if your stamina has changed every frame
+
+    private float bufferCount; //used to create a delay in stamina restoration
+
     public static float damage;
 
 
@@ -29,6 +33,7 @@ public class StatController : MonoBehaviour {
 
     void Start()
     {
+
         MaxStamina = 10;
         effectStamina = 0;
 
@@ -37,6 +42,9 @@ public class StatController : MonoBehaviour {
         playerMaxHealth = 50;
         
         Stamina = MaxStamina;
+
+        tempStamina = Stamina;
+
         playerHealth = playerMaxHealth;
         canRegen = true;
         canRegenCooldown = true;
@@ -45,22 +53,39 @@ public class StatController : MonoBehaviour {
 
     void Update()
     {
+
+        if (bufferCount > 0) //counts down frames before your stamina can start to regen
+        {
+            bufferCount = bufferCount - 0.1f;
+            Debug.Log(bufferCount);
+        }
+
+        if (Stamina < tempStamina) //detects whether or not you have used stamina and if so, begin waiting for colldown to be availabe. 
+        {
+            Debug.Log("test");
+            bufferCount = 10;
+        }
+
+        if (bufferCount < 0.1 && Stamina > 0) //if you are able to regen stamina, begin doing so
+        {
+
+            if (Stamina < MaxStamina && canRegen == true && Stamina > 0 + regenSpace) //cheks if your Stamina is: 1. Less than Max, 2. Able to be regenerated that frame, 3. not zero'ed out.
+            {
+                StartCoroutine(regen());
+
+            } else if (Stamina < 0 + regenSpace && canRegenCooldown == true) //if you are Zero'ed out, then wait for full bar to recharge before you can use it again. 
+            {
+                StartCoroutine(regenCooldown());
+                canRegenCooldown = false;
+                canRegen = false;
+            }
+
+            if (canEffectRegen == true && effectStamina < MaxStamina) //fils up the effect slider to represent that stamina is refillinf after it has zero'ed out.
+            {
+                StartCoroutine(effectRegen());
+            }
+        }
         
-        if (Stamina < MaxStamina && canRegen == true && Stamina > 0 + regenSpace) //cheks if your Stamina is 1. Less than Max, 2. Able to be regenerated that frame, 3. not zero'ed out.
-        {
-            StartCoroutine(regen());
-
-        } else if (Stamina < 0 + regenSpace && canRegenCooldown == true) //if you are Zero'ed out, then wait for full bar to recharge before you can use it again. 
-        {
-            StartCoroutine(regenCooldown());
-            canRegenCooldown = false;
-            canRegen = false;
-        }
-
-        if (canEffectRegen == true && effectStamina < MaxStamina) //fils up the effect slider to represent that stamina is refillinf after it has zero'ed out.
-        {
-            StartCoroutine(effectRegen());
-        }
 
 
         staminaSilder.maxValue = MaxStamina;
@@ -78,6 +103,9 @@ public class StatController : MonoBehaviour {
         {
             playerHealth = playerMaxHealth;
         }
+
+        tempStamina = Stamina; //sets the temp stamina to your current stamina
+
     }
 
     IEnumerator regen() //regens stamina every frame. (WIP)
