@@ -14,8 +14,6 @@ public class StatController : MonoBehaviour {
 
     private float bufferCount; //used to create a delay in stamina restoration
 
-    public static float damage;
-
 
     public static float playerMaxHealth;
     public static float playerHealth;
@@ -34,10 +32,9 @@ public class StatController : MonoBehaviour {
     void Start()
     {
 
-        MaxStamina = 10;
+        MaxStamina = 20;
         effectStamina = 0;
 
-        damage = 15;
 
         playerMaxHealth = 50;
         
@@ -57,12 +54,10 @@ public class StatController : MonoBehaviour {
         if (bufferCount > 0) //counts down frames before your stamina can start to regen
         {
             bufferCount = bufferCount - 0.1f;
-            Debug.Log(bufferCount);
         }
 
         if (Stamina < tempStamina) //detects whether or not you have used stamina and if so, begin waiting for colldown to be availabe. 
         {
-            Debug.Log("test");
             bufferCount = 10;
         }
 
@@ -72,20 +67,22 @@ public class StatController : MonoBehaviour {
             if (Stamina < MaxStamina && canRegen == true && Stamina > 0 + regenSpace) //cheks if your Stamina is: 1. Less than Max, 2. Able to be regenerated that frame, 3. not zero'ed out.
             {
                 StartCoroutine(regen());
+            } 
 
-            } else if (Stamina < 0 + regenSpace && canRegenCooldown == true) //if you are Zero'ed out, then wait for full bar to recharge before you can use it again. 
-            {
-                StartCoroutine(regenCooldown());
-                canRegenCooldown = false;
-                canRegen = false;
-            }
-
-            if (canEffectRegen == true && effectStamina < MaxStamina) //fils up the effect slider to represent that stamina is refillinf after it has zero'ed out.
-            {
-                StartCoroutine(effectRegen());
-            }
         }
-        
+
+        if (Stamina < 0 + regenSpace && canRegenCooldown == true) //if you are Zero'ed out, then wait for full bar to recharge before you can use it again. 
+        {
+            StartCoroutine(regenCooldown());
+            canRegenCooldown = false;
+            canRegen = false;
+        }
+
+        if (canEffectRegen == true && effectStamina < MaxStamina) //fils up the effect slider to represent that stamina is refillinf after it has zero'ed out.
+        {
+            StartCoroutine(effectRegen());
+        }
+
 
 
         staminaSilder.maxValue = MaxStamina;

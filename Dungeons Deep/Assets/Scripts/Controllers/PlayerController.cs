@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour {
 
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && StatController.Stamina > 4) //checks input for dashing
+        if (Input.GetKeyDown(KeyCode.Space) && StatController.Stamina > 0 && dashing == false) //checks input for dashing
         {
             dashing = true;
             invincible = true;
