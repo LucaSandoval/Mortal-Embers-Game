@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Name: Iron Greives
   m_EditorClassIdentifier: 
   name: Iron Greives
-  description: A standard Aldrin soilder's greives. They're torn and dented, but will
-    suffice for some protection.  +2 DEF
+  description: "A standard Aldrin soilder's greives. They're torn and dented, but
+    will suffice for some protection.  \n\n+2 DEF"
   icon: {fileID: 21300000, guid: e18c8c77f4112a44bb431c1cc3a52425, type: 3}
   isDefaultItem: 0
   useText: 2

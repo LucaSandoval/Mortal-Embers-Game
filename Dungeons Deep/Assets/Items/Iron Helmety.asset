@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Name: Iron Helmety
   m_EditorClassIdentifier: 
   name: Iron Helmet
-  description: A standard Aldrin soilder's helmet. It's worn, but will offer some
-    protection to the wearer.  +2 DEF
+  description: "A standard Aldrin soilder's helmet. It's worn, but will offer some
+    protection to the wearer.  \n\n+2 DEF"
   icon: {fileID: 21300000, guid: fdfbee7a5fe5b654992f3a317e055f18, type: 3}
   isDefaultItem: 0
   useText: 2

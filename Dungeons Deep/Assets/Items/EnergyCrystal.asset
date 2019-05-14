@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Name: EnergyCrystal
   m_EditorClassIdentifier: 
   name: Energy Crystal
-  description: Some say the star saints left only their faith in us, but the brilliant
-    gleam of this stone makes one beleive they still walk. + 25 HP PSV
+  description: "Some say the star saints left only their faith in us, but the brilliant
+    gleam of this stone makes one beleive they still walk. \n\n+ 25 HP PSV"
   icon: {fileID: 21300000, guid: 7937d724676cb8c4fa31cc6554c57225, type: 3}
   isDefaultItem: 0
   useText: 0

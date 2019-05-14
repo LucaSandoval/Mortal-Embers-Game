@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Name: Health Potion
   m_EditorClassIdentifier: 
   name: Health Potion
-  description: Healing potion brewed by the Black Covenenant. Eases your pain but
-    worsens your sins.  Restores 50 hp.
+  description: "Healing potion brewed by the Black Covenenant. Eases your pain but
+    worsens your sins.  \n\nRestores 50 hp."
   icon: {fileID: 21300000, guid: 54a1ffb4e4b163845a716d9fd60aae50, type: 3}
   isDefaultItem: 0
   useText: 1
   healthHeal: 50
   staminaHeal: 0
+  healingType: 0
+  healingInterval: 0

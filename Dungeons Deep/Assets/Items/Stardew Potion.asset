@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Name: Stardew Potion
   m_EditorClassIdentifier: 
   name: Stardew Potion
-  description: A blessed potion crafted by the star saints. It will greatly ease your
-    pain. Restores 250 HP.
+  description: "A blessed potion crafted by the star saints. It will greatly ease
+    your pain. \n\nRestores 250 HP."
   icon: {fileID: 21300000, guid: b04612ec2b731e640966361d4e801447, type: 3}
   isDefaultItem: 0
   useText: 1
   healthHeal: 250
   staminaHeal: 0
+  healingType: 0
+  healingInterval: 0

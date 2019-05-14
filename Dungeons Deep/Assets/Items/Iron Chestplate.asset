@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Name: Iron Chestplate
   m_EditorClassIdentifier: 
   name: Iron Chestplate
-  description: A standard Aldrin soilder's chestplate. It has seen many battles, but
-    will still save your life. +3 DEF
+  description: "A standard Aldrin soilder's chestplate. It has seen many battles,
+    but will still save your life. \n\n+3 DEF"
   icon: {fileID: 21300000, guid: c1704a51f90df25459e23c4e0ad96632, type: 3}
   isDefaultItem: 0
   useText: 2
