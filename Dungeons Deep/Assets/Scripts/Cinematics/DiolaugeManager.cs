@@ -25,6 +25,7 @@ public class DiolaugeManager : MonoBehaviour {
 
     public void StartDialogue(Diolauge dialogue)
     {
+        InitializeController.diolaugeBox.SetActive(true);
 
         nameText.text = dialogue.name;
 

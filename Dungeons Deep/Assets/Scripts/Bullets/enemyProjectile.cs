@@ -78,9 +78,11 @@ public class enemyProjectile : MonoBehaviour {
 
         if (dir == "chase")
         {
+            
             playerPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-            moveDirection = (playerPos.position - transform.position);
+            moveDirection = (playerPos.position - transform.position).normalized;
             moveDirection.z = 0;
+            
 
         } else if (dir == "up")
         {

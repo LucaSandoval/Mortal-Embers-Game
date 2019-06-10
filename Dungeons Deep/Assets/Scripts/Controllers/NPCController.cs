@@ -18,7 +18,6 @@ public class NPCController : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.E) && playerIsInRange == true && speaking == false)
             {
                 //PlayerController.isActive = false;
-                InitializeController.diolaugeBox.SetActive(true);
                 FindObjectOfType<DiolaugeManager>().StartDialogue(dioluage);
                 InitializeController.promptBox.SetActive(false);
                 speaking = true;
