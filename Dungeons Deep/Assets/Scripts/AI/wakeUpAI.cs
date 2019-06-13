@@ -29,6 +29,8 @@ public class wakeUpAI : MonoBehaviour {
 
     private Light li;
 
+    private EnemyBulletController bul;
+
     public Transform wakeCheck;
     public float wakeCheckRadius;
 
@@ -54,8 +56,10 @@ public class wakeUpAI : MonoBehaviour {
         InvokeRepeating("generatePosition", 0, Random.Range(1, 5)); // starts the generate position class every second
 
         li = this.GetComponentInChildren<Light>();
+        bul = GetComponent<EnemyBulletController>();
 
         li.enabled = false;
+        bul.enabled = false;
     }
 
     void Update () {
@@ -109,6 +113,8 @@ public class wakeUpAI : MonoBehaviour {
         yield return new WaitForSeconds(prepTime);
         anim.SetBool("awake", true);
         awake = true;
+        bul.enabled = true;
+
     }
 
     public void generatePosition() // this gets a random vector2 so the AI can use it to wander
