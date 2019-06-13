@@ -25,6 +25,7 @@ public class enemyProjectile : MonoBehaviour {
 
         playerPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
+
     }
 
     // Update is called once per frame
@@ -73,14 +74,16 @@ public class enemyProjectile : MonoBehaviour {
         damage = damageAmount;
     }
 
-    public void setDirection(string dir)
+    public void setDirection(string dir, Vector3 pos)
     {
+
+        Vector3 thisPos = pos;
 
         if (dir == "chase")
         {
             
             playerPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-            moveDirection = (playerPos.position - transform.position).normalized;
+            moveDirection = (playerPos.position - thisPos).normalized;
             moveDirection.z = 0;
             
 

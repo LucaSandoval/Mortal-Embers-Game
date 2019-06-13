@@ -43,7 +43,7 @@ public class EnemyBulletController : MonoBehaviour {
         {
             enemyProjectile instance = Instantiate(bulletPrefab);
             instance.setDamage(damage);
-            instance.setDirection("chase");
+            instance.setDirection("chase", transform.position);
             instance.transform.position = this.transform.position;  
         }
 
@@ -55,27 +55,27 @@ public class EnemyBulletController : MonoBehaviour {
                 {
                     enemyProjectile instance = Instantiate(bulletPrefab);
                     instance.setDamage(damage);
-                    instance.setDirection("up");
+                    instance.setDirection("up", transform.position);
                     instance.transform.position = this.transform.position;
                 } else if (i == 2)
                 {
                     enemyProjectile instance = Instantiate(bulletPrefab);
                     instance.setDamage(damage);
-                    instance.setDirection("down");
+                    instance.setDirection("down", transform.position);
                     instance.transform.position = this.transform.position;
                 }
                 else if (i == 3)
                 {
                     enemyProjectile instance = Instantiate(bulletPrefab);
                     instance.setDamage(damage);
-                    instance.setDirection("left");
+                    instance.setDirection("left", transform.position);
                     instance.transform.position = this.transform.position;
                 }
                 else if (i == 4)
                 {
                     enemyProjectile instance = Instantiate(bulletPrefab);
                     instance.setDamage(damage);
-                    instance.setDirection("right");
+                    instance.setDirection("right", transform.position);
                     instance.transform.position = this.transform.position;
                 }
             }
