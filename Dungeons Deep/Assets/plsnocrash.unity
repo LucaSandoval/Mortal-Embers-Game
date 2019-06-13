@@ -58337,7 +58337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a73784e2483b994089b9e14f36ffcc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 5
 --- !u!212 &1615112085
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -67776,7 +67776,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac46e296e77a1e64fbd6ae2a9d73295a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireType: 1
+  fireType: 0
   bulletPrefab: {fileID: 114774103868111592, guid: d123e8803c455fa45891793bc72493dc,
     type: 2}
   shootSpeed: 0.2

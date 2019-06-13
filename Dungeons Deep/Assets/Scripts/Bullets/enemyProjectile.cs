@@ -102,6 +102,21 @@ public class enemyProjectile : MonoBehaviour {
         else if (dir == "left")
         {
             moveDirection = new Vector3(1, 0);
+        } else if (dir == "upleft")
+        {
+            moveDirection = new Vector3(0.8f, 1);
+        }
+        else if (dir == "downleft")
+        {
+            moveDirection = new Vector3(0.8f, -1);
+        }
+        else if (dir == "downright")
+        {
+            moveDirection = new Vector3(-0.8f, -1);
+        }
+        else if (dir == "rightup")
+        {
+            moveDirection = new Vector3(-0.8f, 1);
         }
 
         moveDirection.Normalize();
