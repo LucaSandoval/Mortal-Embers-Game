@@ -7,6 +7,7 @@ public class wakeUpAI : MonoBehaviour {
     public float moveSpeed; // floats controlling movement speed, shoot speed, patrol size, maximum bullets, reload speed and ammo
     public float patrolArea;
     public float prepTime; //the time it takes to become active
+    public float followInterval; //for how long enemy follws you before pasuing
 
 
     private bool inRange;
@@ -15,8 +16,6 @@ public class wakeUpAI : MonoBehaviour {
     private bool awake;
 
     private Animator anim;
-
-
 
     private Transform playerPosition;
     public Transform rangeCheck;
@@ -33,6 +32,10 @@ public class wakeUpAI : MonoBehaviour {
 
     public Transform wakeCheck;
     public float wakeCheckRadius;
+
+
+    private float wanderTimer;
+    private bool canWait;
 
 
 
@@ -60,6 +63,12 @@ public class wakeUpAI : MonoBehaviour {
 
         li.enabled = false;
         bul.enabled = false;
+
+        rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+
+        canWait = true;
+
+        wanderTimer = followInterval * 10;
     }
 
     void Update () {
@@ -78,7 +87,18 @@ public class wakeUpAI : MonoBehaviour {
         if (inRange == true && awake == true) // this checks if the okayer is in range of the AI and starts moving towards it
         {
             //moves grunt every frame.
-            rb.velocity = (playerPosition.position - transform.position).normalized * moveSpeed * Time.deltaTime;
+
+            if (wanderTimer > 0)
+            {
+                wanderTimer = wanderTimer - 0.1f;
+                rb.velocity = (playerPosition.position - transform.position).normalized * moveSpeed * Time.deltaTime;
+
+            } else
+            {
+                    rb.velocity = Vector3.zero;
+                    StartCoroutine(wait());
+                    canWait = false;
+            }
         }
         else if (awake == true)
         {
@@ -106,7 +126,6 @@ public class wakeUpAI : MonoBehaviour {
         }
     }
 
-
     IEnumerator wakeUp()
     {
         li.enabled = true;
@@ -114,6 +133,9 @@ public class wakeUpAI : MonoBehaviour {
         anim.SetBool("awake", true);
         awake = true;
         bul.enabled = true;
+        rb.constraints = RigidbodyConstraints2D.None;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+
 
     }
 
@@ -181,6 +203,18 @@ public class wakeUpAI : MonoBehaviour {
                 anim.SetBool("Right", false);
 
             }
+        }
+    }
+
+    IEnumerator wait()
+    {
+        if (canWait == true)
+        {
+            bul.instantFire("special");
+            yield return new WaitForSeconds(2f);
+            wanderTimer = followInterval * 10;
+            canWait = true;
+
         }
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyBulletController : MonoBehaviour {
 
     public fireType fireType;
+    public fireType specialFireType;
 
     public enemyProjectile bulletPrefab;
     private CameraShake cam;
@@ -149,6 +150,120 @@ public class EnemyBulletController : MonoBehaviour {
         }
     }
 
+    public void specialBulletFire(float damage) //function for instantiating and then firing secondary bullets.
+    {
+
+        if (specialFireType.ToString() == "chase") //if the bullet that will be spawned is of the chasing type
+        {
+            enemyProjectile instance = Instantiate(bulletPrefab);
+            instance.setDamage(damage);
+            instance.setDirection("chase", transform.position);
+            instance.transform.position = this.transform.position;
+        }
+
+        if (specialFireType.ToString() == "fourspread") // if the bullet that will be spawned is of the directional type.
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                if (i == 1)
+                {
+                    enemyProjectile instance = Instantiate(bulletPrefab);
+                    instance.setDamage(damage);
+                    instance.setDirection("up", transform.position);
+                    instance.transform.position = this.transform.position;
+                }
+                else if (i == 2)
+                {
+                    enemyProjectile instance = Instantiate(bulletPrefab);
+                    instance.setDamage(damage);
+                    instance.setDirection("down", transform.position);
+                    instance.transform.position = this.transform.position;
+                }
+                else if (i == 3)
+                {
+                    enemyProjectile instance = Instantiate(bulletPrefab);
+                    instance.setDamage(damage);
+                    instance.setDirection("left", transform.position);
+                    instance.transform.position = this.transform.position;
+                }
+                else if (i == 4)
+                {
+                    enemyProjectile instance = Instantiate(bulletPrefab);
+                    instance.setDamage(damage);
+                    instance.setDirection("right", transform.position);
+                    instance.transform.position = this.transform.position;
+                }
+            }
+        }
+
+        if (specialFireType.ToString() == "eightspread") // if the bullet that will be spawned is of the directional type.
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                if (i == 1)
+                {
+                    enemyProjectile instance = Instantiate(bulletPrefab);
+                    instance.setDamage(damage);
+                    instance.setDirection("up", transform.position);
+                    instance.transform.position = this.transform.position;
+                }
+                else if (i == 2)
+                {
+                    enemyProjectile instance = Instantiate(bulletPrefab);
+                    instance.setDamage(damage);
+                    instance.setDirection("upleft", transform.position);
+                    instance.transform.position = this.transform.position;
+                }
+                else if (i == 3)
+                {
+                    enemyProjectile instance = Instantiate(bulletPrefab);
+                    instance.setDamage(damage);
+                    instance.setDirection("left", transform.position);
+                    instance.transform.position = this.transform.position;
+                }
+                else if (i == 4)
+                {
+                    enemyProjectile instance = Instantiate(bulletPrefab);
+                    instance.setDamage(damage);
+                    instance.setDirection("downleft", transform.position);
+                    instance.transform.position = this.transform.position;
+                }
+
+                else if (i == 5)
+                {
+                    enemyProjectile instance = Instantiate(bulletPrefab);
+                    instance.setDamage(damage);
+                    instance.setDirection("down", transform.position);
+                    instance.transform.position = this.transform.position;
+                }
+
+                else if (i == 6)
+                {
+                    enemyProjectile instance = Instantiate(bulletPrefab);
+                    instance.setDamage(damage);
+                    instance.setDirection("downright", transform.position);
+                    instance.transform.position = this.transform.position;
+                }
+
+                else if (i == 7)
+                {
+                    enemyProjectile instance = Instantiate(bulletPrefab);
+                    instance.setDamage(damage);
+                    instance.setDirection("right", transform.position);
+                    instance.transform.position = this.transform.position;
+                }
+
+                else if (i == 8)
+                {
+                    enemyProjectile instance = Instantiate(bulletPrefab);
+                    instance.setDamage(damage);
+                    instance.setDirection("rightup", transform.position);
+                    instance.transform.position = this.transform.position;
+                }
+            }
+        }
+    }
+
     private void Update()
     {
         inRange = Physics2D.OverlapCircle(rangeCheck.position, checkRadius, whatisPlayer);
@@ -194,6 +309,18 @@ public class EnemyBulletController : MonoBehaviour {
     {
         bulletDamage = Attack;
     }
+
+    public void instantFire(string type)
+    {
+        if (type == "standard")
+        {
+            fireBullet(bulletDamage);
+
+        } else if (type == "special")
+        {
+            specialBulletFire(bulletDamage);
+        }
+    } //allows bullets to be instanlty fired regardless of enemies current ammo etc.
 }
 
 public enum fireType { chase, fourspread, eightspread}

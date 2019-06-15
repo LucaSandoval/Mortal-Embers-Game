@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MonsterStats : MonoBehaviour {
 
-    public EnemyBulletController bulletControllScript;
-    public LootController lootControllerScript;
+    private EnemyBulletController bulletControllScript;
+    private LootController lootControllerScript;
 
     public float Health;
     public float Attack;
@@ -16,12 +16,15 @@ public class MonsterStats : MonoBehaviour {
 
     private float damage;
 
-
+    private bool canTakeDamage;
 
     public void Start()
     {
+        bulletControllScript = this.GetComponent<EnemyBulletController>();
+        lootControllerScript = this.GetComponent<LootController>();
         bulletControllScript.SetBulletDamage(Attack); //sets the enemies bullet damage initialy.
         ren = GetComponent<SpriteRenderer>();
+        canTakeDamage = true;
         
     }
 
@@ -37,26 +40,42 @@ public class MonsterStats : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-
-        if (other.tag == "Bullet")
+        if (canTakeDamage == true)
         {
 
-            damage = WeaponManager.instance.currentWeapon.physicalDamage + Random.Range(-3, 3);
+            if (other.tag == "Bullet")
+            {
+                canTakeDamage = false;
 
-            DamageTextController.CreateDamageText(damage.ToString(), transform, "Gray");
+                StartCoroutine(damageBuff());
 
-            Health = Health - damage;
+                damage = WeaponManager.instance.currentWeapon.physicalDamage + Random.Range(-3, 3);
+
+                DamageTextController.CreateDamageText(damage.ToString(), transform, "Gray");
+
+                Health = Health - damage;
 
 
-        } else if (other.tag == "Ability")
-        {
-            damage = WeaponManager.instance.currentWeapon.abilityDamage + Random.Range(-3, 3);
+            } else if (other.tag == "Ability")
+            {
+                canTakeDamage = false;
 
-            DamageTextController.CreateDamageText(damage.ToString(), transform, "Yellow");
+                StartCoroutine(damageBuff());
 
-            Health = Health - damage;
+                damage = WeaponManager.instance.currentWeapon.abilityDamage + Random.Range(-3, 3);
 
+                DamageTextController.CreateDamageText(damage.ToString(), transform, "Yellow");
+
+                Health = Health - damage;
+
+            }
         }
+    }
+
+    IEnumerator damageBuff()
+    {
+        yield return new WaitForSeconds(0.1f);
+        canTakeDamage = true;
     }
 
 }

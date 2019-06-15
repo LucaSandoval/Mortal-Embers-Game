@@ -58,7 +58,7 @@ public class StatController : MonoBehaviour {
 
         if (Stamina < tempStamina) //detects whether or not you have used stamina and if so, begin waiting for colldown to be availabe. 
         {
-            bufferCount = 10;
+            bufferCount = 2.5f;
         }
 
         if (bufferCount < 0.1 && Stamina > 0) //if you are able to regen stamina, begin doing so

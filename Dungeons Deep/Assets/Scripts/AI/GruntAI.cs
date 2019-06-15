@@ -23,9 +23,7 @@ public class GruntAI : MonoBehaviour {
 
     private Animator anim;
     
-    
-
-    
+   
     void Start () { // runs on play
 
 

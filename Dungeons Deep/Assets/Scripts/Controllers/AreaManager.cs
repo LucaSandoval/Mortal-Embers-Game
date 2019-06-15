@@ -30,6 +30,9 @@ public class AreaManager : MonoBehaviour {
             case 3:
                 areaName = "Old Keep of Embers";
                 break;
+            case 4:
+                areaName = "Cold Shore";
+                break;
             default:
                 areaName = "null";
                 break;
