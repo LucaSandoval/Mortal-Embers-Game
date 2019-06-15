@@ -12,8 +12,6 @@ public class MonsterStats : MonoBehaviour {
     public float Defence;
     public float Luck;
 
-    private SpriteRenderer ren;
-
     private float damage;
 
     private bool canTakeDamage;
@@ -23,7 +21,6 @@ public class MonsterStats : MonoBehaviour {
         bulletControllScript = this.GetComponent<EnemyBulletController>();
         lootControllerScript = this.GetComponent<LootController>();
         bulletControllScript.SetBulletDamage(Attack); //sets the enemies bullet damage initialy.
-        ren = GetComponent<SpriteRenderer>();
         canTakeDamage = true;
         
     }

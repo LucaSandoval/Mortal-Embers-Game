@@ -59,6 +59,7 @@ public class NPCController : MonoBehaviour {
 
             speaking = false;
             canScroll = false;
+            DiolaugeManager.inDiolauge = false;
 
         }
     }

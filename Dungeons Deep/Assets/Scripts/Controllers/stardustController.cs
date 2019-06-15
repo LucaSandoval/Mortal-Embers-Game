@@ -20,8 +20,8 @@ public class stardustController : MonoBehaviour {
     {
         if (addedAmount > 0)
         {
-            addedAmount = addedAmount - 2;
-            starDust = starDust + 2;
+            addedAmount = addedAmount - 1;
+            starDust = starDust + 1;
             addedAmountText.text = "+ " + addedAmount.ToString();
             starDustText.text = starDust.ToString();
         } else

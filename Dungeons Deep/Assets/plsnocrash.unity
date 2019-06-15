@@ -68253,7 +68253,7 @@ MonoBehaviour:
   - 15
   - 15
   - 5
-  stardustDrop: 100
+  stardustDrop: 1000
   dropRadius: 0.3
 --- !u!61 &2093399293
 BoxCollider2D:

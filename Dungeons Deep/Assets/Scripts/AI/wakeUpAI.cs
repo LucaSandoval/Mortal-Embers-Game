@@ -37,8 +37,6 @@ public class wakeUpAI : MonoBehaviour {
     private float wanderTimer;
     private bool canWait;
 
-
-
     void Start () {
 
         playerPosition = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();  // this gets the position of the player so the AI can use it 

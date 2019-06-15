@@ -8,7 +8,6 @@ public class EnemyBulletController : MonoBehaviour {
     public fireType specialFireType;
 
     public enemyProjectile bulletPrefab;
-    private CameraShake cam;
     private float bulletDamage;
 
     public float shootSpeed;
@@ -32,8 +31,6 @@ public class EnemyBulletController : MonoBehaviour {
         bullets = 0;
 
         Restoring = false;
-
-        cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraShake>();
 
     }
 
