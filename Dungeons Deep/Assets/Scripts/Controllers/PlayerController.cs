@@ -62,8 +62,14 @@ public class PlayerController : MonoBehaviour {
             dashing = true;
             invincible = true;
             StatController.Stamina = StatController.Stamina - 4;
-            VisualEffects.spawnDashEffect(transform);
             rb.velocity = new Vector2(moveInput.x, moveInput.y) * 15;
+
+
+            if (facing == 0)
+            {
+                anim.SetBool("forwardRoll", true);
+            }
+
             StartCoroutine(dash());
         }
 
@@ -190,9 +196,10 @@ public class PlayerController : MonoBehaviour {
 
     IEnumerator dash() //makes it so you can't infinitely dash.
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.12f);
+        anim.SetBool("forwardRoll", false);
         dashing = false;
-        VisualEffects.spawnDashEffect(transform);
+
 
         invincible = false;
 
