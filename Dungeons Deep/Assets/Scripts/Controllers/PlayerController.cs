@@ -65,9 +65,13 @@ public class PlayerController : MonoBehaviour {
             rb.velocity = new Vector2(moveInput.x, moveInput.y) * 15;
 
 
+
             if (facing == 0)
             {
                 anim.SetBool("forwardRoll", true);
+            } else if (facing == 1)
+            {
+                anim.SetBool("upRoll", true);
             }
 
             StartCoroutine(dash());
@@ -198,6 +202,8 @@ public class PlayerController : MonoBehaviour {
     {
         yield return new WaitForSeconds(0.12f);
         anim.SetBool("forwardRoll", false);
+        anim.SetBool("upRoll", false);
+
         dashing = false;
 
 
