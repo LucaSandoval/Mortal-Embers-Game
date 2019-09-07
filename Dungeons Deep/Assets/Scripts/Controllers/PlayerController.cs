@@ -72,6 +72,12 @@ public class PlayerController : MonoBehaviour {
             } else if (facing == 1)
             {
                 anim.SetBool("upRoll", true);
+            } else if (facing == 2)
+            {
+                anim.SetBool("leftRoll", true);
+            } else if (facing == 3)
+            {
+                anim.SetBool("rightRoll", true);
             }
 
             StartCoroutine(dash());
@@ -203,6 +209,9 @@ public class PlayerController : MonoBehaviour {
         yield return new WaitForSeconds(0.12f);
         anim.SetBool("forwardRoll", false);
         anim.SetBool("upRoll", false);
+        anim.SetBool("leftRoll", false);
+        anim.SetBool("rightRoll", false);
+
 
         dashing = false;
 
