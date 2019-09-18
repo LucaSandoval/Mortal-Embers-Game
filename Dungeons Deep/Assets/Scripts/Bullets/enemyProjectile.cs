@@ -62,6 +62,7 @@ public class enemyProjectile : MonoBehaviour {
             DamageTextController.CreateDamageText(damage.ToString(), transform, "Red");
             StatController.playerHealth = StatController.playerHealth - damage;
             VisualEffects.spawnHitEffect(transform);
+            bloodEffect.bloodEffectAmmount = bloodEffect.bloodEffectAmmount + 0.4f;
             Destroy(gameObject);
             }
 

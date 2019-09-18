@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour {
     private Vector2 moveVelocity;
 
     public static bool dashing;
+    private bool dashInput;
     public static bool invincible;
     public static Transform globalPLayerPosition;
 
@@ -34,6 +35,7 @@ public class PlayerController : MonoBehaviour {
         anim.SetBool("right", false);
 
         dashing = false;
+        dashInput = false;
         invincible = false;
        
 
@@ -57,9 +59,10 @@ public class PlayerController : MonoBehaviour {
 
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && StatController.Stamina > 0 && dashing == false) //checks input for dashing
+        if (Input.GetKeyDown(KeyCode.Space) && StatController.Stamina > 0 && dashInput == false) //checks input for dashing
         {
             dashing = true;
+            dashInput = true;
             invincible = true;
             StatController.Stamina = StatController.Stamina - 4;
             rb.velocity = new Vector2(moveInput.x, moveInput.y) * 15;
@@ -212,11 +215,14 @@ public class PlayerController : MonoBehaviour {
         anim.SetBool("leftRoll", false);
         anim.SetBool("rightRoll", false);
 
-
         dashing = false;
 
 
         invincible = false;
+
+        yield return new WaitForSeconds(0.2f);
+
+        dashInput = false;
 
 
     }
