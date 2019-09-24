@@ -11,7 +11,6 @@ public class Projectile : MonoBehaviour {
 
     Vector3 moveDirection;
 
-    
 
     void Start()
     {
