@@ -19,7 +19,7 @@ public class chest : Interactable
         animator.SetBool("opened", false);
     }
     public void Update(){
-        if (Input.GetKeyDown(KeyCode.E) && playerIsInRange == true && opened == false){
+        if (Input.GetKeyDown(KeyCode.E) && playerIsInRange == true && opened == false && pauseController.gamePaused == false){
             Interact();
         }
     }

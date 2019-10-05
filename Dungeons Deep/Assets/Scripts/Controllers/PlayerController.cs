@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour {
 
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && StatController.Stamina > 0 && dashInput == false) //checks input for dashing
+        if (Input.GetKeyDown(KeyCode.Space) && StatController.Stamina > 0 && dashInput == false && pauseController.gamePaused == false) //checks input for dashing
         {
             dashing = true;
             dashInput = true;
@@ -113,7 +113,7 @@ public class PlayerController : MonoBehaviour {
 
     void HandleAnims() // handles animation for movment.
     {
-
+        if (pauseController.gamePaused == false){
         if (Input.GetKey(KeyCode.A))
         {
             facing = 2;
@@ -204,6 +204,7 @@ public class PlayerController : MonoBehaviour {
 
             }
 
+        }
         }
     }
 

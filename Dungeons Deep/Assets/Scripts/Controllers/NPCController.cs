@@ -13,7 +13,7 @@ public class NPCController : MonoBehaviour {
 
     void Update() //checking for player interaction.
     {
-        if (PlayerController.dashing == false)
+        if (PlayerController.dashing == false && pauseController.gamePaused == false)
         {
             if (Input.GetKeyDown(KeyCode.E) && playerIsInRange == true && speaking == false)
             {

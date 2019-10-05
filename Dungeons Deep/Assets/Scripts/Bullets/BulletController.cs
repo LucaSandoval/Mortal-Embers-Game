@@ -27,9 +27,9 @@ public class BulletController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (Input.GetMouseButtonDown(0))
+		if (Input.GetMouseButtonDown(0) && pauseController.gamePaused == false)
         {
-            if (InventoryUI.inventoryOpen == true)
+            if (InventoryUI.inventoryOpen == false)
             {
                 if(manager.currentWeapon != null){
 

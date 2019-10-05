@@ -32,7 +32,7 @@ public class StatController : MonoBehaviour {
     void Start()
     {
 
-        MaxStamina = 200;
+        MaxStamina = 20;
         effectStamina = 0;
 
 

@@ -30,7 +30,7 @@ public class ItemPickup : Interactable {
 
     void Update() //checking for player pickup.
     {
-        if (Input.GetKeyDown(KeyCode.E) && playerIsInRange == true)
+        if (Input.GetKeyDown(KeyCode.E) && playerIsInRange == true && pauseController.gamePaused == false)
         {
             Interact();
         }
