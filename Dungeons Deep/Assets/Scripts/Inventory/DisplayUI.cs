@@ -63,17 +63,15 @@ public class DisplayUI : MonoBehaviour {
 
     public void Update()
     {
-
-        if (isDisplayWindowOpen == true)
-        {
-            gameObject.SetActive(true);
-
+        if (thisItem == null){
+            gameObject.SetActive(false);
         }
-        else
-        {
+
+        if (isDisplayWindowOpen){
+            gameObject.SetActive(true);
+        } else {
             gameObject.SetActive(false);
         }
     }
-
 
 }

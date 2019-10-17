@@ -42,7 +42,7 @@ public class abilityController : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1))
         {
-            if (InventoryUI.inventoryOpen == true)
+            if (InventoryUI.inventoryOpen == false)
             {
                 if (manager.currentWeapon != null)
                 {
