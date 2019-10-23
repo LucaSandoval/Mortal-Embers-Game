@@ -19,6 +19,18 @@ public class InventorySlot : MonoBehaviour {
         displayWindow = GameObject.Find("Canvas/Inventory/InventoryDisplay/DisplayParent");
     }
 
+    public void OnEnable(){
+        GetComponentInChildren<Image>().color = new Color(0, 0, 0, 1);
+    }
+
+    public void Highlight(){
+        GetComponentInChildren<Image>().color = new Color(0.2f, 0.2f, 0.2f, 1);
+    }
+
+    public void UnHighlight(){
+        GetComponentInChildren<Image>().color = new Color(0, 0, 0, 1);
+    }
+
     public void AddItem(Item newItem)
     {
         if (newItem is Weapon)
