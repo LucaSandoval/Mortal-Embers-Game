@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class StatController : MonoBehaviour {
 
+    float level;
+    public static float currentXP;
+    float xpToNextLevel;
     public static float Stamina;
     public static float MaxStamina;
     private float regenSpace = 0.1f; //esentially a little bit of buffer time for when the stamina bar hits zero so the calculations can be done.
@@ -25,12 +28,21 @@ public class StatController : MonoBehaviour {
     public Text healthText;
     public Text staminaText;
 
+    public Text maxHPText;
+    public Text maxStaminaText;
+
+    public Text levelTxt;
+    public Text xpText;
+
     private bool canRegen;
     private bool canRegenCooldown;
     private bool canEffectRegen;
 
     void Start()
     {
+        level = 1;
+        currentXP = 0;
+        xpToNextLevel = 100;
 
         MaxStamina = 20;
         effectStamina = 0;
@@ -102,6 +114,11 @@ public class StatController : MonoBehaviour {
         }
 
         tempStamina = Stamina; //sets the temp stamina to your current stamina
+
+        maxStaminaText.text = MaxStamina.ToString();
+        maxHPText.text = playerMaxHealth.ToString();
+        levelTxt.text = level.ToString();
+        xpText.text = currentXP.ToString() + "/" + xpToNextLevel.ToString();
 
     }
 

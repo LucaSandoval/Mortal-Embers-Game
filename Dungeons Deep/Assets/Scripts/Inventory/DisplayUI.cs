@@ -66,12 +66,6 @@ public class DisplayUI : MonoBehaviour {
         if (thisItem == null){
             gameObject.SetActive(false);
         }
-
-        if (isDisplayWindowOpen){
-            gameObject.SetActive(true);
-        } else {
-            gameObject.SetActive(false);
-        }
     }
 
 }

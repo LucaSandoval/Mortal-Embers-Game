@@ -5,6 +5,7 @@ public class InventoryUI : MonoBehaviour {
 
     public Transform itemsParent;
     public  GameObject inventoryUI;
+    public GameObject displayUI;
     public static bool inventoryOpen;
 
 
@@ -36,6 +37,7 @@ public class InventoryUI : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.Q) && DisplayUI.isDisplayWindowOpen == true) //alows the player to open their inventory using the Q key.
             {
                 DisplayUI.isDisplayWindowOpen = false;
+                displayUI.SetActive(false);
                 inventoryUI.SetActive(!inventoryUI.activeSelf);
                 inventoryOpen = !inventoryOpen;
 

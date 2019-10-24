@@ -11,6 +11,8 @@ public class LootController : MonoBehaviour {
 
     public float stardustDrop;
 
+    public float xpYeild;
+
     private float dice;
 
     private ItemPickup lootBag;
@@ -22,6 +24,7 @@ public class LootController : MonoBehaviour {
     public void dropLoot()
     {
         stardustController.addedAmount = stardustController.addedAmount + stardustDrop + Random.Range(-3, 3);
+        StatController.currentXP = StatController.currentXP + xpYeild;
 
         for (int i = 0; i < drops.Length; i++)
         {
