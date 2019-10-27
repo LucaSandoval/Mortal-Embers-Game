@@ -10,10 +10,12 @@ public class DisplayUI : MonoBehaviour {
     public Text buttonOne;
     public Text itemName;
 
+    [HideInInspector]
     public Item thisItem;
 
     public static bool isDisplayWindowOpen;
 
+    [HideInInspector]
     public InventorySlot itemSlot;
 
     public GameObject damageTypes; //types of damage in UI.
@@ -33,6 +35,9 @@ public class DisplayUI : MonoBehaviour {
     public Text starText;
     public GameObject starIcon;
 
+    public GameObject staminaIcon;
+    public Text staminaCostText;
+
     private void Awake()
     {
         physicalIcon.SetActive(false);
@@ -40,6 +45,7 @@ public class DisplayUI : MonoBehaviour {
         chaosIcon.SetActive(false);
         soulIcon.SetActive(false);
         starIcon.SetActive(false);
+        staminaIcon.SetActive(false);
 
     }
 
@@ -51,6 +57,7 @@ public class DisplayUI : MonoBehaviour {
         itemSlot.ClearSlot();
         Inventory.instance.Remove(thisItem);
         isDisplayWindowOpen = false;
+        gameObject.SetActive(false);
     }
 
     public void ItemDropButton()
@@ -58,6 +65,7 @@ public class DisplayUI : MonoBehaviour {
         itemSlot.dropButton();
         Inventory.instance.Remove(thisItem);
         isDisplayWindowOpen = false;
+        gameObject.SetActive(false);
     }
 
 

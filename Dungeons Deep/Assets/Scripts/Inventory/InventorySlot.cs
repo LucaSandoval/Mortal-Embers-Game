@@ -188,6 +188,9 @@ public class InventorySlot : MonoBehaviour {
                     displayWindowScipt.starIcon.SetActive(false);
                 }
 
+                displayWindowScipt.staminaIcon.SetActive(true);
+                displayWindowScipt.staminaCostText.text = weapon.staminaCost.ToString();
+
 
 
                 if (weapon.useText.ToString() == (string)"Equip")

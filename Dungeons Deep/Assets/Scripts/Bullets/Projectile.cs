@@ -20,6 +20,10 @@ public class Projectile : MonoBehaviour {
         moveDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position);
         moveDirection.z = 0;
         moveDirection.Normalize();
+
+        faceMouse();
+
+
     }
 
     private void Update()   
@@ -27,13 +31,14 @@ public class Projectile : MonoBehaviour {
 
         transform.position = transform.position + moveDirection * WeaponManager.instance.currentWeapon.shootSpeed * Time.deltaTime;
 
+    }
 
-        Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+    public void faceMouse(){
 
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, turnSpeed * Time.deltaTime);
-
+        Vector3 mousePosition = Input.mousePosition;
+        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+        Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
+        transform.up = direction;
     }
 
 

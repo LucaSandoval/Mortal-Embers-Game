@@ -25,7 +25,7 @@ public class enemyProjectile : MonoBehaviour {
 
         playerPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
-
+        facePlayer();
     }
 
     // Update is called once per frame
@@ -34,8 +34,15 @@ public class enemyProjectile : MonoBehaviour {
 
         transform.position = transform.position + moveDirection * speed * Time.deltaTime;
 
-        Quaternion rotation = Quaternion.LookRotation(playerPos.transform.position - transform.position, transform.TransformDirection(Vector3.down));
-        transform.rotation = new Quaternion(0, 0, rotation.z, rotation.w);
+
+        //Quaternion rotation = Quaternion.LookRotation(playerPos.transform.position - transform.position, transform.TransformDirection(Vector3.down));
+        //transform.rotation = new Quaternion(0, 0, rotation.z, rotation.w);
+    }
+
+    public void facePlayer(){
+       
+        Vector2 direction = new Vector2(playerPos.position.x - transform.position.x, playerPos.position.y - transform.position.y);
+        transform.up = direction;
     }
 
     IEnumerator destroyAfterTime()

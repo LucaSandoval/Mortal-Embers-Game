@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour {
             dashInput = true;
             invincible = true;
             StatController.Stamina = StatController.Stamina - 4;
-            rb.velocity = new Vector2(moveInput.x, moveInput.y) * 15;
+            rb.velocity = new Vector2(moveInput.x, moveInput.y) * 10;
 
 
 
@@ -87,6 +87,7 @@ public class PlayerController : MonoBehaviour {
         }
 
         globalPLayerPosition = this.transform;
+
     }
 
     private void FixedUpdate()
@@ -210,7 +211,8 @@ public class PlayerController : MonoBehaviour {
 
     IEnumerator dash() //makes it so you can't infinitely dash.
     {
-        yield return new WaitForSeconds(0.12f);
+        yield return new WaitForSeconds(0.25f);
+        //yield return new WaitForSeconds(0.12f);
         anim.SetBool("forwardRoll", false);
         anim.SetBool("upRoll", false);
         anim.SetBool("leftRoll", false);

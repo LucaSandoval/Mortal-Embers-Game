@@ -8,6 +8,7 @@ public class StatController : MonoBehaviour {
     float level;
     public static float currentXP;
     float xpToNextLevel;
+    public Slider xpSlider;
     public static float Stamina;
     public static float MaxStamina;
     private float regenSpace = 0.1f; //esentially a little bit of buffer time for when the stamina bar hits zero so the calculations can be done.
@@ -44,7 +45,7 @@ public class StatController : MonoBehaviour {
         currentXP = 0;
         xpToNextLevel = 100;
 
-        MaxStamina = 20;
+        MaxStamina = 200;
         effectStamina = 0;
 
 
@@ -119,6 +120,8 @@ public class StatController : MonoBehaviour {
         maxHPText.text = playerMaxHealth.ToString();
         levelTxt.text = level.ToString();
         xpText.text = currentXP.ToString() + "/" + xpToNextLevel.ToString();
+        xpSlider.maxValue = xpToNextLevel;
+        xpSlider.value = currentXP;
 
     }
 

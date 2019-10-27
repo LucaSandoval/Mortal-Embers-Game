@@ -32,6 +32,7 @@ public class AreaManager : MonoBehaviour {
                 break;
             case 4:
                 areaName = "Cold Shore";
+                FindObjectOfType<AudioManager>().Play("Cold_Shore_ambiance");
                 break;
             default:
                 areaName = "null";
@@ -57,6 +58,7 @@ public class AreaManager : MonoBehaviour {
 
         emberNameText.text = emberName;
         areNameText.text = areaName;
+
 
     }
 }
